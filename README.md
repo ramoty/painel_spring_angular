@@ -40,4 +40,4 @@ Driver JDBC para conexão com o banco de dados.
 `spring.jpa.database-platform`: Indica o path da classe de dialeto do Hibernate.
 
 ## Inicialização
-Para iniciar o servidor do projeto basta executar como aplicaçõa `Sprint Boot`, pela IDE Eclipse ou STS ou executar o comando `mvn run:spring-boot` pelo terminal dentro da pasta raíz do projeto. Após o servidor da aplicação ter inicializado a interface do admin pode ser acessada no endereço: http://localhost:8080/index.html
+Para iniciar o servidor do projeto basta executar como aplicaçõa `Sprint Boot`, pela IDE Eclipse ou STS ou executar o comando `mvn run:spring-boot` pelo terminal dentro da pasta raíz do projeto. Após o servidor da aplicação ter inicializado a interface do admin pode ser acessada no endereço: http://localhost:8080/admin.html

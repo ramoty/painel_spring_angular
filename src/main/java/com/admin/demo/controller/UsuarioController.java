@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,27 +22,27 @@ public class UsuarioController {
 	@Autowired
 	UsuarioRepository repository;
 
-	@GetMapping("/usuarios")
+	@GetMapping("/api/usuarios")
 	public List<Usuario> buscarTodos() {
 		return repository.findAll();
 	}
 
-	@PostMapping("/usuarios")
-	public Usuario cadastrar(@RequestParam Usuario usuario) {
+	@PostMapping("/api/usuarios")
+	public Usuario cadastrar(@RequestBody Usuario usuario) {
 		return repository.save(usuario);
 	}
 
-	@PutMapping("/usuarios")
-	public Usuario atualizar(@RequestParam Usuario usuario) {
+	@PutMapping("/api/usuarios")
+	public Usuario atualizar(@RequestBody Usuario usuario) {
 		return repository.save(usuario);
 	}
 
-	@DeleteMapping("/usuarios")
-	public void remover(@RequestParam Usuario usuario) {
+	@DeleteMapping("/api/usuarios")
+	public void remover(@RequestBody Usuario usuario) {
 		repository.delete(usuario);
 	}
 
-	@DeleteMapping("/usuarios/:id")
+	@DeleteMapping("/api/usuarios/:id")
 	public void remover(@PathParam(value = "id") Integer id) {
 		repository.delete(id);
 	}

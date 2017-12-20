@@ -44,9 +44,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.antMatchers("/js/**").anonymous()
 		.antMatchers("/css/**").anonymous()
 		.antMatchers("/login*").anonymous()
-		.antMatchers("/*").hasRole("ADMIN")
-		.anyRequest().authenticated()
-		.and().formLogin().loginPage("/login.html").defaultSuccessUrl("/home.html").failureUrl("/login.html?error=true").permitAll()
+		.antMatchers("/assets*").anonymous()
+		.antMatchers("/pages*").anonymous()
+		.antMatchers("/*").anonymous()
+//		.antMatchers("/*").hasRole("ADMIN")
+//		.anyRequest().authenticated()
+		.and().formLogin().loginPage("/login.html").defaultSuccessUrl("/admin.html").failureUrl("/login.html?error=true").permitAll()
 		.and().logout().logoutSuccessUrl("/login.html");
 		
 		http.exceptionHandling().accessDeniedPage("/403");
